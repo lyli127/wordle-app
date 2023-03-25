@@ -37,13 +37,17 @@ body {
   --rightLetterColor: #51a558;
   --kindaRightLetterColor: #dd8846;
   --wrongLetterColor: #8e8e8e;
-  --userInputColour: white;
+  --guessedWordColour: white;
   --borderColor: black;
+  --btnDarkColor: #322f7a;
+  --btnLightColor: #7161b0;
 
   /* Fonts */
   --titleFont: "Bangers", cursive;
-  --userInputFont: "Roboto Mono", monospace;
-  --userInputFontSize: 2rem;
+  --guessedWordFont: "Roboto Mono", monospace;
+  --guessedWordFontSize: 2rem;
+  /* STYLE */
+  text-align: center;
 }
 
 /* LAYOUT */
@@ -95,8 +99,37 @@ h1 {
   color: var(--wrongLetterColor);
 }
 
+.guessedWord {
+  font-family: var(--guessedWordFont);
+  color: var(--guessedWordColour);
+  font-size: var(--guessedWordFontSize);
+}
+.guessWordBtn {
+  margin-top: 2rem;
+  font-family: var(--guessedWordFont);
+  letter-spacing: 0.3rem;
+  /* Button style */
+  font-family: Arial;
+  width: 12rem;
+  height: 3.5rem;
+  border-width: 1px;
+  color: var(--guessedWordColour);
+  border-color: #7161b0;
+  font-weight: bold;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0px 10px 14px -7px #5d3995;
+  text-shadow: 0px 1px 0px #322f7a;
+  background: linear-gradient(#7161b0, #322f7a);
+}
+.guessWordBtn:hover {
+  background: linear-gradient(#322f7a, #7161b0);
+}
 .userInput {
-  font-family: var(--userInputFont);
-  color: var(--userInputColour);
-  font-size: var(--userInputFontSize);
+  width: 15rem;
+  height: 3.4rem;
+  font-size: 2rem;
+  font-family: var(--guessedWordFont);
 }
