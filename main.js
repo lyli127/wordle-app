@@ -1,19 +1,19 @@
 /* 
 //Get all elements from the DOM I want to manipulate each letter from each row
-- get words array from GA
-- get all letters
-- get the user input value
-- store attempts number which equals to valid button clicks with valid inputs
-- store score value = 0 
+- get words array from GA ✓
+- get all letters ✓
+- get the user input value ✓
+- store attempts number which equals to valid button clicks with valid inputs ✓
+- store score value = 0 ✓
 
 //create any elements I'll need to show in the DOM
 
-//grab random word from array with math.random math.floor
+//grab random word from array with math.random math.floor ✓
 
 // Create function to sanitise user input
-- check it it's exactly 5 letters
-- make the letters uppercase 
-- check if word exists in array, if not return invalid word message
+- check it it's exactly 5 letters ✓
+- make the letters uppercase ✓
+- check if word exists in array, if not return invalid word message ✓
 
 //Create function to check attempt number
 - On attempt number 5, the 'guess word' button must be disabled
@@ -26,9 +26,56 @@
 - if guessedWord character index === randomWord character index then print letter in green on the board
 
 //Create function (and button) to reset game/board but not the score (clearboard function)
-- get every letter element and set text.content to empty string and clean up any added classes classes.remove("guessedWord");
+- get every letter element and set text.content to empty string and clean up any added classes classes.remove("guessedWord"); ✓
 - remove 'disabled' button attribute
 
 //Set event listeners
 
 */
+//Declaring variables
+const letters = document.querySelectorAll(".letter");
+let guessedWord = document.getElementById("userInput").value;
+let score = document.getElementById("score");
+let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
+
+//Score and Attempt Num
+let attemptNum = 0;
+let newScore = 0;
+
+//Divs and boad Elms
+const boardRows = ["row1", "row2", "row3", "row4", "row5"];
+//declare each row
+
+//User Input Sanitisation
+function sanitise(guessedWord) {
+  if (guessedWord.length === 5 && validWords.includes(guessedWord)) {
+    guessedWord.toUpperCase();
+    attemptNum = attemptNum + 1;
+    return guessedWord;
+  } else {
+    alert(`${guessedWord} is not a valid word. Please try again.`);
+  }
+}
+
+//Testing characters - Game logic
+function checkGuessedWord(guessedWord) {
+  if (guessedWord === randomWord) {
+    confetti();
+    newScore = newScore + 1;
+    //print each guessedWord character in the correct row and letter space
+  }
+}
+
+//Board Reset - Game Restart
+function resetBoard() {
+  for (let letter of letters) {
+    letter.classList.remove("guessedWord");
+    letter.textContent = "";
+  }
+}
+
+//Update Score
+function updateScore() {
+  score.innerText = newScore;
+}
+updateScore();
