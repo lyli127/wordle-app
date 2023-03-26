@@ -105,21 +105,14 @@ h1 {
   font-size: var(--guessedWordFontSize);
 }
 .guessWordBtn {
-  margin-top: 2rem;
   font-family: var(--guessedWordFont);
   letter-spacing: 0.3rem;
   /* Button style */
-  font-family: Arial;
-  width: 12rem;
-  height: 3.5rem;
   border-width: 1px;
   color: var(--guessedWordColour);
   border-color: #7161b0;
   font-weight: bold;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-radius: 0.2rem;
   box-shadow: 0px 10px 14px -7px #5d3995;
   text-shadow: 0px 1px 0px #322f7a;
   background: linear-gradient(#7161b0, #322f7a);
@@ -127,7 +120,7 @@ h1 {
 .guessWordBtn:hover {
   background: linear-gradient(#322f7a, #7161b0);
 }
-.userInput {
+.guessedWord {
   width: 15rem;
   height: 3.4rem;
   font-size: 2rem;
