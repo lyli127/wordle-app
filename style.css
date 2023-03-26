@@ -133,3 +133,34 @@ h1 {
   font-size: 2rem;
   font-family: var(--guessedWordFont);
 }
+
+/* USER INPUT FORM */
+form {
+  margin: 3rem auto;
+  height: 3rem;
+  width: 30rem;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 0.7rem;
+}
+
+form input {
+  align-self: stretch;
+  justify-self: stretch;
+  font-family: var(--guessedWordFont);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0;
+  text-align: center;
+  border: 1px solid black;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+form button {
+  align-self: stretch;
+  justify-self: stretch;
+}
