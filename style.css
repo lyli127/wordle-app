@@ -51,12 +51,24 @@ body {
 }
 
 /* LAYOUT */
+.header {
+  display: grid;
+}
 h1 {
   font-family: var(--titleFont);
   font-size: 4rem;
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 2rem;
 }
+h2 {
+  font-family: var(--titleFont);
+  font-size: 2rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-self: end;
+  align-self: start;
+}
+
 .board {
   margin: 3rem auto;
   padding: 1rem;
@@ -157,7 +169,10 @@ form input {
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }
-
+form input::placeholder {
+  letter-spacing: 0;
+  opacity: 50%;
+}
 form button {
   align-self: stretch;
   justify-self: stretch;
