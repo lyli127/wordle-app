@@ -104,23 +104,7 @@ h2 {
 .letter:hover {
   transform: scale(1.1);
 }
-.btn {
-  font-family: var(--guessedWordFont);
-  letter-spacing: 0.3rem;
-  /* Button style */
-  border-width: 1px;
-  color: var(--guessedWordColour);
-  border-color: #7161b0;
-  font-weight: bold;
-  border-radius: 0.2rem;
-  box-shadow: 0px 10px 14px -7px #5d3995;
-  text-shadow: 0px 1px 0px #322f7a;
-  background: linear-gradient(#7161b0, #322f7a);
-  font-size: 1.5rem;
-}
-.btn:hover {
-  background: linear-gradient(#322f7a, #7161b0);
-}
+
 .guessedWord {
   width: 15rem;
   height: 3.4rem;
@@ -131,7 +115,7 @@ h2 {
 /* USER INPUT FORM */
 form {
   margin: 3rem auto;
-  height: 3rem;
+  min-height: 3rem;
   width: 30rem;
   display: grid;
   align-content: center;
@@ -157,9 +141,24 @@ form input::placeholder {
   letter-spacing: 0;
   opacity: 50%;
 }
-form button {
+/* BUTTON STYLES */
+.btn {
   align-self: stretch;
   justify-self: stretch;
+  font-family: var(--guessedWordFont);
+  letter-spacing: 0.3rem;
+  border-width: 1px;
+  color: var(--guessedWordColour);
+  border-color: #7161b0;
+  font-weight: bold;
+  border-radius: 0.2rem;
+  box-shadow: 0px 10px 14px -7px #5d3995;
+  text-shadow: 0px 1px 0px #322f7a;
+  background: linear-gradient(#7161b0, #322f7a);
+  font-size: 1.5rem;
+}
+.btn:hover {
+  background: linear-gradient(#322f7a, #7161b0);
 }
 
 /* JAVASCRIPT ONLY CLASSES */
