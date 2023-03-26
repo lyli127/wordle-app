@@ -32,7 +32,7 @@
         pattern="[a-zA-Z]{5}"
         placeholder="5-LETTER WORD"
       />
-      <button type="submit" class="guessWordBtn">GUESS WORD</button>
+      <button type="submit" class="btn guessWordBtn">GUESS WORD</button>
     </form>
     <div class="board">
       <!-- ROW 1 -->
@@ -70,11 +70,17 @@
       <div class="row5 letter letter4"></div>
       <div class="row5 letter letter5"></div>
     </div>
+    <!-- RESET GAME -->
+    <form action=".">
+      <button type="submit" class="btn resetGame">RESTART</button>
+      <h2>SCORE: <span id="score"></span></h2>
+    </form>
     <br />
     <hr />
     <br />
     <div class="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="words.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
