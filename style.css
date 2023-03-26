@@ -45,7 +45,7 @@ body {
   /* Fonts */
   --titleFont: "Bangers", cursive;
   --guessedWordFont: "Roboto Mono", monospace;
-  --guessedWordFontSize: 2rem;
+  --guessedWordFontSize: 3rem;
   /* STYLE */
   text-align: center;
 }
@@ -82,6 +82,11 @@ h1 {
   justify-self: stretch;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
     0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* LETTER STYLES */
+  color: var(--guessedWordColour);
+  font-size: var(--guessedWordFontSize);
+  font-family: var(--guessedWordFont);
 }
 .letter:hover {
   transform: scale(1.1);
