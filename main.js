@@ -109,3 +109,7 @@ function updateScore() {
   score.innerText = newScore;
 }
 updateScore();
+
+//Add Event Listeners
+guessWordBtn.addEventListener(onclick, onGuessWordBtnClick);
+resetGameBtn.addEventListener(onclick, resetBoard);
