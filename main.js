@@ -63,35 +63,31 @@ function checkGuessedWord(guessedWord) {
   if (guessedWord === randomWord) {
     confetti();
     newScore = newScore + 1;
-    //print each guessedWord character in the correct row and letter space
   } else {
-    //include other scenarios where character is wrong
+    for (let index = 0; index < 5; index++) {
     //character is right and in the right position
+      if (guessedWord[index] === randomWord[index]) {
+        const squareToUpdate = document
+          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
+          .item(index);
+        console.log(squareToUpdate);
+        squareToUpdate.classList.add("rightLetter");
+        squareToUpdate.innerText = guessedWord[index];
     //character is right and in the wrong position
-  }
+      } else if (randomWord.includes(guessedWord[index])) {
+        const squareToUpdate = document
+          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
+          .item(index);
+        squareToUpdate.classList.add("kindaRightLetter");
+        squareToUpdate.innerText = guessedWord[index];
+        //character is wrong
+      } else {
+        const squareToUpdate = document
+          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
+          .item(index);
+        squareToUpdate.classList.add("wrongLetter");
+        squareToUpdate.innerText = guessedWord[index];
 }
-
-//Helper function for character checks
-function isRightPosition() {
-  for (let index = 0; index < 5; index++) {
-    if (guessedWord[i] === randomWord[i]) {
-      const squareToUpdate = document.getElementsByClassName(
-        `.row${attemptNum}.letter${index + 1}`
-      );
-      squareToUpdate[i].classList.add("rightLetter");
-      squareToUpdate[i].textContent = guessedWord[i];
-    } else if (randomWord.includes(guessedWord[i])) {
-      const squareToUpdate = document.getElementsByClassName(
-        `.row${attemptNum}.letter${index + 1}`
-      );
-      squareToUpdate[i].classList.add("kindaRightLetter");
-      squareToUpdate[i].textContent = guessedWord[i];
-    } else {
-      const squareToUpdate = document.getElementsByClassName(
-        `.row${attemptNum}.letter${index + 1}`
-      );
-      squareToUpdate[i].classList.add("wrongLetter");
-      squareToUpdate[i].textContent = guessedWord[i];
     }
   }
 }
