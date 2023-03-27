@@ -117,7 +117,8 @@ function checkGuessedWord(guessedWord) {
 }
 
 //Board Reset - Game Restart
-function resetBoard() {
+function resetBoard(event) {
+  event.preventDefault();
   // debugger;
   for (let letter of letters) {
     letter.classList.remove("rightLetter", "kindaRightLetter", "wrongLetter");
@@ -133,7 +134,8 @@ function updateScore() {
 updateScore();
 
 //Main function for the game
-function onGuessWordBtnClick() {
+function onGuessWordBtnClick(event) {
+  event.preventDefault();
   generateRandomWord();
   console.log(randomWord);
   let sanitisedGuess = sanitise();
