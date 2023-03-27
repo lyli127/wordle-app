@@ -36,15 +36,16 @@
 const letters = document.querySelectorAll(".letter");
 let guessedWord = document.getElementById("userInput").value;
 let score = document.getElementById("score");
-let randomWord = validWords[Math.floor(Math.random() * validWords.length)];
+let randomWord = "";
 
 //Score and Attempt Num
 let attemptNum = 0;
 let newScore = 0;
 
-//Divs and boad Elms
-const boardRows = ["row1", "row2", "row3", "row4", "row5"];
-//declare each row
+function generateRandomWord() {
+  randomWord = validWords[Math.floor(Math.random() * validWords.length)];
+  return randomWord;
+}
 
 //User Input Sanitisation
 function sanitise(guessedWord) {
