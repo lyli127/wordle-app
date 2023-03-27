@@ -56,8 +56,11 @@ function generateRandomWord() {
 
 //User Input Sanitisation
 function sanitise(guessedWord) {
-  if (guessedWord.length === 5 && validWords.includes(guessedWord)) {
-    guessedWord.toUpperCase();
+  if (
+    guessedWord.length === 5 &&
+    validWords.includes(guessedWord.toUpperCase())
+  ) {
+    guessedWord = guessedWord.toUpperCase();
     attemptNum = attemptNum + 1;
     console.log(guessedWord);
     return guessedWord;
