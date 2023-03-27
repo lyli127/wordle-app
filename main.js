@@ -64,6 +64,13 @@ function checkGuessedWord(guessedWord) {
     confetti();
     newScore = newScore + 1;
     //print each guessedWord character in the correct row and letter space
+  } else {
+    //include other scenarios where character is wrong
+    //character is right and in the right position
+    //character is right and in the wrong position
+  }
+}
+
 //Helper function for character checks
 function isRightPosition() {
   for (let index = 0; index < 5; index++) {
@@ -92,7 +99,7 @@ function isRightPosition() {
 //Board Reset - Game Restart
 function resetBoard() {
   for (let letter of letters) {
-    letter.classList.remove("guessedWord");
+    letter.classList.remove("rightLetter", "kindaRightLetter", "wrongLetter");
     letter.textContent = "";
   }
 }
