@@ -110,6 +110,14 @@ function updateScore() {
 }
 updateScore();
 
+//Main function for the game
+function onGuessWordBtnClick() {
+  resetBoard();
+  generateRandomWord();
+  sanitise(guessedWord);
+  checkGuessedWord(guessedWord);
+  updateScore();
+}
 //Add Event Listeners
 guessWordBtn.addEventListener(onclick, onGuessWordBtnClick);
 resetGameBtn.addEventListener(onclick, resetBoard);
