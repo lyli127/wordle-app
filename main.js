@@ -33,8 +33,9 @@
 
 */
 //Get DOM Elms
+
 const letters = document.querySelectorAll(".letter");
-let guessedWord = document.getElementById("userInput").value;
+const userInput = document.getElementById("userInput");
 
 //Buttons
 const guessWordBtn = document.getElementById("guessWordBtn");
@@ -45,17 +46,23 @@ let score = document.getElementById("score");
 let randomWord = "";
 let attemptNum = 0;
 let newScore = 0;
+// console.log(randomWord);
+// console.log(attemptNum);
+// console.log(newScore);
+// console.log(generateRandomWord());
+// console.log(sanitise("tooth"));
+// console.log(guessedWord);
 
 //Functions
 
 function generateRandomWord() {
   randomWord = validWords[Math.floor(Math.random() * validWords.length)];
-  console.log(randomWord);
   return randomWord;
 }
 
 //User Input Sanitisation
-function sanitise(guessedWord) {
+function sanitise() {
+  let guessedWord = userInput.value;
   if (
     guessedWord.length === 5 &&
     validWords.includes(guessedWord.toUpperCase())
@@ -71,40 +78,47 @@ function sanitise(guessedWord) {
 
 //Testing characters - Game logic
 function checkGuessedWord(guessedWord) {
+  // debugger;
+  guessedWord = "ABASE";
+  randomWord = "ABASE";
+  console.log(guessedWord);
   if (guessedWord === randomWord) {
     confetti();
     newScore = newScore + 1;
-  } else {
-    for (let index = 0; index < 5; index++) {
-      //character is right and in the right position
-      if (guessedWord[index] === randomWord[index]) {
-        const squareToUpdate = document
-          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
-          .item(index);
-        console.log(squareToUpdate);
-        squareToUpdate.classList.add("rightLetter");
-        squareToUpdate.innerText = guessedWord[index];
-        //character is right and in the wrong position
-      } else if (randomWord.includes(guessedWord[index])) {
-        const squareToUpdate = document
-          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
-          .item(index);
-        squareToUpdate.classList.add("kindaRightLetter");
-        squareToUpdate.innerText = guessedWord[index];
-        //character is wrong
-      } else {
-        const squareToUpdate = document
-          .getElementsByClassName(`.row${attemptNum}.letter${index + 1}`)
-          .item(index);
-        squareToUpdate.classList.add("wrongLetter");
-        squareToUpdate.innerText = guessedWord[index];
-      }
+  }
+
+  for (let index = 0; index < 5; index++) {
+    // debugger;
+    //character is right and in the right position
+    console.log(guessedWord[index]);
+    if (guessedWord[index] === randomWord[index]) {
+      const squareToUpdate = document.querySelector(
+        `.row${attemptNum}.letter${index + 1}`
+      );
+      console.log(squareToUpdate);
+      squareToUpdate.classList.add("rightLetter");
+      squareToUpdate.innerText = guessedWord[index];
+      //character is right and in the wrong position
+    } else if (randomWord.includes(guessedWord[index])) {
+      const squareToUpdate = document.querySelector(
+        `.row${attemptNum}.letter${index + 1}`
+      );
+      squareToUpdate.classList.add("kindaRightLetter");
+      squareToUpdate.innerText = guessedWord[index];
+      //character is wrong
+    } else {
+      const squareToUpdate = document.querySelector(
+        `.row${attemptNum}.letter${index + 1}`
+      );
+      squareToUpdate.classList.add("wrongLetter");
+      squareToUpdate.innerText = guessedWord[index];
     }
   }
 }
 
 //Board Reset - Game Restart
 function resetBoard() {
+  // debugger;
   for (let letter of letters) {
     letter.classList.remove("rightLetter", "kindaRightLetter", "wrongLetter");
     letter.textContent = "";
@@ -120,13 +134,16 @@ updateScore();
 
 //Main function for the game
 function onGuessWordBtnClick() {
-  resetBoard();
   generateRandomWord();
-  sanitise(guessedWord);
-  checkGuessedWord(guessedWord);
+  console.log(randomWord);
+  let sanitisedGuess = sanitise();
+  // console.log(guessedWord);
+  checkGuessedWord(sanitisedGuess);
   updateScore();
+  console.log(newScore);
 }
 
 //Add Event Listeners
-guessWordBtn.addEventListener(onclick, onGuessWordBtnClick);
-resetGameBtn.addEventListener(onclick, resetBoard);
+guessWordBtn.addEventListener("click", onGuessWordBtnClick);
+// document.querySelector("form").addEventListener("submit", onGuessWordBtnClick);
+resetGameBtn.addEventListener("click", resetBoard);
