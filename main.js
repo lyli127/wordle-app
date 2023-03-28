@@ -39,19 +39,13 @@ const userInput = document.getElementById("userInput");
 
 //Buttons
 const guessWordBtn = document.getElementById("guessWordBtn");
-const resetGameBtn = document.getElementById("resetGame");
+const startNewGameBtn = document.getElementById("startNewGame");
 let score = document.getElementById("score");
 
 //Declaring variables
 let randomWord = "";
 let attemptNum = 0;
 let newScore = 0;
-// console.log(randomWord);
-// console.log(attemptNum);
-// console.log(newScore);
-// console.log(generateRandomWord());
-// console.log(sanitise("tooth"));
-// console.log(guessedWord);
 
 //Functions
 
@@ -78,11 +72,13 @@ function sanitise() {
 
 //Testing characters - Game logic
 function checkGuessedWord(guessedWord) {
-  // debugger;
-  guessedWord = "ABASE";
-  randomWord = "ABASE";
+  userInput.value = "";
+  // guessedWord = "ABASE";
+  // randomWord = "ABASE";
   console.log(guessedWord);
   if (guessedWord === randomWord) {
+    // debugger;
+    document.getElementById("guessWordBtn").disabled = true;
     confetti();
     newScore = newScore + 1;
   }
@@ -90,7 +86,7 @@ function checkGuessedWord(guessedWord) {
   for (let index = 0; index < 5; index++) {
     // debugger;
     //character is right and in the right position
-    console.log(guessedWord[index]);
+    // console.log(guessedWord[index]);
     if (guessedWord[index] === randomWord[index]) {
       const squareToUpdate = document.querySelector(
         `.row${attemptNum}.letter${index + 1}`
@@ -117,12 +113,23 @@ function checkGuessedWord(guessedWord) {
 }
 
 //Board Reset - Game Restart
-function resetBoard(event) {
-  event.preventDefault();
-  // debugger;
-  for (let letter of letters) {
-    letter.classList.remove("rightLetter", "kindaRightLetter", "wrongLetter");
-    letter.textContent = "";
+function initialiseBoard(event) {
+  document.getElementById("guessWordBtn").disabled = false;
+  userInput.value = "";
+  if (!event) {
+    //initialise board for the first time
+    generateRandomWord();
+    console.log(randomWord);
+  } else {
+    //response to the click event
+    event.preventDefault();
+    attemptNum = 0;
+    generateRandomWord();
+    console.log(randomWord);
+    for (let letter of letters) {
+      letter.classList.remove("rightLetter", "kindaRightLetter", "wrongLetter");
+      letter.textContent = "";
+    }
   }
 }
 
@@ -131,21 +138,36 @@ function updateScore() {
   score.innerText = newScore;
   return newScore;
 }
-updateScore();
+
+//Attempt Number
+function attemptTracker(guessedWord) {
+  // debugger;
+  if (attemptNum === 5 && randomWord !== guessedWord) {
+    document.getElementById("guessWordBtn").disabled = true;
+    alert("You lost");
+  } else if (attemptNum === 5) {
+    document.getElementById("guessWordBtn").disabled = true;
+  }
+}
 
 //Main function for the game
 function onGuessWordBtnClick(event) {
   event.preventDefault();
-  generateRandomWord();
   console.log(randomWord);
   let sanitisedGuess = sanitise();
   // console.log(guessedWord);
   checkGuessedWord(sanitisedGuess);
   updateScore();
+  attemptTracker(sanitisedGuess);
   console.log(newScore);
 }
 
 //Add Event Listeners
 guessWordBtn.addEventListener("click", onGuessWordBtnClick);
 // document.querySelector("form").addEventListener("submit", onGuessWordBtnClick);
-resetGameBtn.addEventListener("click", resetBoard);
+startNewGameBtn.addEventListener("click", initialiseBoard);
+
+//Calling funtions
+updateScore();
+initialiseBoard();
+console.log(randomWord);
