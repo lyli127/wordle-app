@@ -161,6 +161,13 @@ form input::placeholder {
   background: linear-gradient(#322f7a, #7161b0);
 }
 
+.btn:disabled {
+  background: linear-gradient(#e57cb7, #da182f) !important;
+  border-color: #e57cb7 !important;
+  box-shadow: 0px 10px 14px -7px #95396c !important;
+  text-shadow: 0px 1px 0px #da182f !important;
+  cursor: not-allowed;
+}
 /* JAVASCRIPT ONLY CLASSES */
 /*.guessedWord {
   width: 15rem;
