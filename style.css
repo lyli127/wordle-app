@@ -163,10 +163,10 @@ form input::placeholder {
 }
 
 .btn:disabled {
-  background: linear-gradient(#e57cb7, #da182f) !important;
-  border-color: #e57cb7 !important;
-  box-shadow: 0px 10px 14px -7px #95396c !important;
-  text-shadow: 0px 1px 0px #da182f !important;
+  background: linear-gradient(#e4e3e3, #8b8989) !important;
+  border-color: #e4e3e3 !important;
+  box-shadow: 0px 10px 14px -7px #70666b !important;
+  text-shadow: 0px 1px 0px #8b8989 !important;
   cursor: not-allowed;
 }
 
