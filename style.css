@@ -107,7 +107,7 @@ p {
   color: var(--guessedWordColour);
   font-size: var(--guessedWordFontSize);
   font-family: var(--guessedWordFont);
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1.5px black;
 }
 .letter:hover {
   transform: scale(1.1);
