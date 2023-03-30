@@ -154,8 +154,8 @@ function onGuessWordBtnClick(event) {
 }
 
 //Add Event Listeners
-guessWordBtn.addEventListener("click", onGuessWordBtnClick);
 // document.querySelector("form").addEventListener("submit", onGuessWordBtnClick);
+guessWordBtn.addEventListener("click", onGuessWordBtnClick);
 startNewGameBtn.addEventListener("click", initialiseBoard);
 
 //Calling funtions
