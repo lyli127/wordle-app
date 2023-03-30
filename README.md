@@ -10,7 +10,7 @@ This is the first project out 4 of for General Assembly Software Engineering Int
 
 ## Technology used:
 
-** HTML && CSS & Vanilla JS **
+**HTML && CSS & Vanilla JS**
 
 <br/>
 
