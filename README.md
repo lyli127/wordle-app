@@ -10,7 +10,7 @@ This is the first project out 4 of for General Assembly Software Engineering Int
 
 ## Technology used:
 
-![alt text](images/html5.png =45x) ![alt text](images/css.png =45x) ![alt text](images/javascript.png =45x)
+**HTML && CSS & Vanilla JS**
 
 <br/>
 
