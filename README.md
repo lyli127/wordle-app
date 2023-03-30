@@ -9,8 +9,9 @@ This is the first project out 4 of for General Assembly Software Engineering Int
 ---
 
 ## Technology used:
-
-**HTML && CSS & Vanilla JS**
+![HTML](https://github.com/lyli127/wordle-app/blob/main/images/html5-logo.png?sanitize=true&raw=true "HTML")
+![CSS](https://github.com/lyli127/wordle-app/blob/main/images/css-logo.png?sanitize=true&raw=true "CSS")
+![JavaScript](https://github.com/lyli127/wordle-app/blob/main/images/javascript-logo.png?sanitize=true&raw=true "JavaScript")
 
 <br/>
 
