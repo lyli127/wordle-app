@@ -2,11 +2,11 @@
 
 const letters = document.querySelectorAll(".letter");
 const userInput = document.getElementById("userInput");
+let score = document.getElementById("score");
 
 //Buttons
 const guessWordBtn = document.getElementById("guessWordBtn");
 const startNewGameBtn = document.getElementById("startNewGame");
-let score = document.getElementById("score");
 
 //Declaring variables
 let randomWord = "";
@@ -31,7 +31,7 @@ function sanitise() {
     attemptNum = attemptNum + 1;
     return guessedWord;
   } else {
-    alert(`${guessedWord} is not a valid word. Please try again.`);
+    alert(`NOT IN WORD LIST`);
   }
 }
 
