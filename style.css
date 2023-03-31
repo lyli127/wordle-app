@@ -30,7 +30,6 @@ img {
 }
 
 /* MY STYLES */
-
 /* THEMES */
 body {
   /* Colours */
@@ -171,12 +170,6 @@ form input::placeholder {
 }
 
 /* JAVASCRIPT ONLY CLASSES */
-/*.guessedWord {
-  width: 15rem;
-  height: 3.4rem;
-  font-size: 2rem;
-  font-family: var(--guessedWordFont); 
-}*/
 
 .rightLetter {
   background-color: var(--rightLetterColor);
