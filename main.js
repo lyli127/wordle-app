@@ -42,7 +42,7 @@ function checkGuessedWord(guessedWord) {
   if (guessedWord === randomWord) {
     document.getElementById("guessWordBtn").disabled = true;
     //Confetti sourced from https://www.kirilv.com/canvas-confetti/
-    // confetti();
+    // Confetti
     var count = 200;
     var defaults = {
       origin: { y: 0.7 },
