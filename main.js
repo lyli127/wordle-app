@@ -136,10 +136,10 @@ function updateScore() {
 
 //Attempt Number
 function attemptTracker(guessedWord) {
-  if (attemptNum === 5 && randomWord !== guessedWord) {
+  if (attemptNum === 6 && randomWord !== guessedWord) {
     document.getElementById("guessWordBtn").disabled = true;
     alert("You lost");
-  } else if (attemptNum === 5) {
+  } else if (attemptNum === 6) {
     document.getElementById("guessWordBtn").disabled = true;
   }
 }
