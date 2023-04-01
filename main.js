@@ -138,7 +138,7 @@ function updateScore() {
 function attemptTracker(guessedWord) {
   if (attemptNum === 6 && randomWord !== guessedWord) {
     document.getElementById("guessWordBtn").disabled = true;
-    alert("You lost");
+    alert(`You lost. The word was ${randomWord}`);
   } else if (attemptNum === 6) {
     document.getElementById("guessWordBtn").disabled = true;
   }
